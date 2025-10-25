@@ -230,6 +230,84 @@
             animation: pulse 2s infinite;
         }
 
+        /* Pricing Section */
+        .pricing {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fff8 100%);
+            text-align: center;
+        }
+
+        .pricing-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f5f9f5 100%);
+            border-radius: 20px;
+            padding: 50px 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            border: 3px solid var(--primary-light);
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary-light), var(--primary-color));
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: linear-gradient(135deg, var(--accent-color), #ffb74d);
+            color: white;
+            padding: 8px 40px;
+            transform: rotate(45deg);
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 10px rgba(255, 152, 0, 0.3);
+        }
+
+        .price {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin: 20px 0;
+        }
+
+        .price-period {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .price-features {
+            text-align: left;
+            margin: 30px 0;
+        }
+
+        .price-features li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .price-features i {
+            color: var(--primary-color);
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+
+        .investment-note {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 20px;
+            font-style: italic;
+        }
+
         /* Benefits Section */
         .benefits {
             background: linear-gradient(135deg, #f8fff8 0%, #e8f5e9 100%);
@@ -659,6 +737,14 @@
             .cta-section h2 {
                 font-size: 2rem;
             }
+
+            .pricing-card {
+                padding: 40px 20px;
+            }
+
+            .price {
+                font-size: 3rem;
+            }
         }
 
         @media (max-width: 576px) {
@@ -701,6 +787,10 @@
             .cta-section h2 {
                 font-size: 1.8rem;
             }
+
+            .price {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
@@ -709,20 +799,6 @@
     <header id="header">
         <div class="container header-container">
             <a href="#" class="logo">LongeViva</a>
-            <nav>
-                <ul class="nav-menu">
-                    <li><a href="#home">Início</a></li>
-                    <li><a href="#benefits">Benefícios</a></li>
-                    <li><a href="#about">Sobre</a></li>
-                    <li><a href="#testimonials">Depoimentos</a></li>
-                    <li><a href="#contact">Contato</a></li>
-                </ul>
-                <div class="hamburger">
-                    <div class="line1"></div>
-                    <div class="line2"></div>
-                    <div class="line3"></div>
-                </div>
-            </nav>
         </div>
     </header>
 
@@ -731,10 +807,10 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Viva Mais Anos com Saúde, Energia e Vitalidade</h1>
-                <p><strong>Programa LongeViva:</strong> Prevenção e tratamento natural para complicações de saúde após os 45 anos.</p>
+                <p><strong>Programa LongeViva de 3 Meses:</strong> Prevenção e tratamento natural para complicações de saúde após os 45 anos.</p>
                 <p>Diga adeus às dores, cansaço, insônia e doenças crônicas.</p>
                 <p>Recupere a energia que você tinha aos 30 anos!</p>
-                <a href="https://wa.me/258851760874?text=Olá!%20Quero%20aderir%20ao%20programa%20LongeViva%20agora!" class="btn btn-accent">ADERIR AGORA</a>
+                <a href="https://wa.me/258851760874?text=Olá!%20Quero%20aderir%20ao%20programa%20LongeViva%20de%203%20meses%20por%208000MT!" class="btn btn-accent">ADERIR AGORA - 8000MT</a>
                 <div class="urgency-badge">
                     <i class="fas fa-bolt"></i> Vagas Limitadas - Garanta Sua Vaga!
                 </div>
@@ -742,10 +818,37 @@
         </div>
     </section>
 
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Investimento no Seu Bem-Estar</h2>
+            <div class="pricing-card">
+                <div class="pricing-badge">MAIS VENDIDO</div>
+                <h3>Programa Completo LongeViva</h3>
+                <div class="price">8000 MT</div>
+                <div class="price-period">Programa de 3 meses com resultados garantidos</div>
+                
+                <ul class="price-features">
+                    <li><i class="fas fa-check-circle"></i> <strong>Acompanhamento personalizado</strong> durante 3 meses</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>Plano nutricional individualizado</strong></li>
+                    <li><i class="fas fa-check-circle"></i> <strong>Exercícios específicos</strong> para sua idade</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>Técnicas de gestão de stress</strong></li>
+                    <li><i class="fas fa-check-circle"></i> <strong>Suporte via WhatsApp</strong> 24/7</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>Material exclusivo</strong> em PDF</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>Avaliações regulares</strong> de progresso</li>
+                </ul>
+                
+                <a href="https://wa.me/258851760874?text=Olá!%20Quero%20aderir%20ao%20programa%20LongeViva%20de%203%20meses%20por%208000MT!" class="btn btn-accent">QUERO ME INSCREVER</a>
+                
+                <p class="investment-note">Apenas 2667 MT por mês - Menos de 90 MT por dia pela sua saúde!</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Benefits Section -->
     <section class="benefits" id="benefits">
         <div class="container">
-            <h2 class="section-title">O Que Você Vai Conquistar</h2>
+            <h2 class="section-title">O Que Você Vai Conquistar em 3 Meses</h2>
             <div class="slider-container">
                 <div class="slider">
                     <div class="slide">
@@ -780,9 +883,9 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <h2>Não Espere Mais Para Recuperar Sua Saúde</h2>
-            <p>Junte-se a centenas de pessoas que já transformaram suas vidas com o programa LongeViva. Resultados garantidos ou seu dinheiro de volta!</p>
-            <a href="https://wa.me/258851760874?text=Olá!%20Quero%20aderir%20ao%20programa%20LongeViva%20agora!" class="btn">QUERO MINHA VAGA AGORA</a>
+            <h2>Invista 8000MT na Sua Saúde Por 3 Meses</h2>
+            <p>Menos de 90 MT por dia para transformar completamente sua saúde e qualidade de vida. Resultados garantidos ou seu dinheiro de volta!</p>
+            <a href="https://wa.me/258851760874?text=Olá!%20Quero%20aderir%20ao%20programa%20LongeViva%20de%203%20meses%20por%208000MT!" class="btn">QUERO MINHA VAGA AGORA</a>
         </div>
     </section>
 
@@ -791,7 +894,7 @@
         <div class="container">
             <h2 class="section-title">Método Comprovado</h2>
             <div class="about-content">
-                <p>O programa LongeViva foi desenvolvido com base em pesquisas científicas e 15 anos de experiência no campo da saúde preventiva, focando especialmente nas necessidades de pessoas a partir dos 45 anos.</p>
+                <p>O programa LongeViva de 3 meses foi desenvolvido com base em pesquisas científicas e 15 anos de experiência no campo da saúde preventiva, focando especialmente nas necessidades de pessoas a partir dos 45 anos.</p>
                 <p>Através de um método integrado que combina orientação nutricional personalizada, exercícios específicos para sua idade e técnicas de gerenciamento do estresse, o programa ajuda a recuperar e manter a vitalidade, combatendo os principais problemas associados ao envelhecimento.</p>
                 <p><span class="founder-name">Criado por Hermenegildo Mucanze</span>, especialista em saúde e bem-estar com mais de 15 anos de experiência ajudando pessoas a recuperarem sua qualidade de vida após os 45 anos.</p>
             </div>
@@ -804,7 +907,7 @@
             <h2 class="section-title">Quem Já Transformou a Vida</h2>
             <div class="testimonials-container">
                 <div class="testimonial">
-                    <p class="testimonial-text">"Aos 58 anos, me sinto mais disposta do que aos 40. Em 3 meses no programa, minhas dores nas costas desapareceram e recuperei a energia. Vale cada centavo!"</p>
+                    <p class="testimonial-text">"Aos 58 anos, me sinto mais disposta do que aos 40. Em 3 meses no programa, minhas dores nas costas desapareceram e recuperei a energia. Vale cada centavo dos 8000MT!"</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">M</div>
                         <div class="author-info">
@@ -814,7 +917,7 @@
                     </div>
                 </div>
                 <div class="testimonial">
-                    <p class="testimonial-text">"Finalmente consegui dormir bem depois de anos lutando contra a insônia. O programa mudou minha vida completamente. Recomendo a todos!"</p>
+                    <p class="testimonial-text">"Finalmente consegui dormir bem depois de anos lutando contra a insônia. O programa de 3 meses mudou minha vida completamente. Melhor investimento que já fiz!"</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">J</div>
                         <div class="author-info">
@@ -824,7 +927,7 @@
                     </div>
                 </div>
                 <div class="testimonial">
-                    <p class="testimonial-text">"Depois de tentar de tudo para minha artrite, o LongeViva foi a única coisa que funcionou. Em 2 meses, 80% das dores sumiram. Incrível!"</p>
+                    <p class="testimonial-text">"Depois de tentar de tudo para minha artrite, o LongeViva foi a única coisa que funcionou. Em 2 meses, 80% das dores sumiram. Os 8000MT valeram cada centavo!"</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">A</div>
                         <div class="author-info">
@@ -840,9 +943,9 @@
     <!-- Final CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <h2>Sua Transformação Começa Agora</h2>
-            <p>Não deixe a idade determinar sua qualidade de vida. Tome uma atitude hoje e garanta anos de saúde, energia e vitalidade.</p>
-            <a href="https://wa.me/258851760874?text=Olá!%20Quero%20aderir%20ao%20programa%20LongeViva%20agora!" class="btn">QUERO MINHA VAGA AGORA</a>
+            <h2>Sua Transformação de 3 Meses Começa Agora</h2>
+            <p>Não deixe a idade determinar sua qualidade de vida. Invista 8000MT na sua saúde e garante anos de vitalidade.</p>
+            <a href="https://wa.me/258851760874?text=Olá!%20Quero%20aderir%20ao%20programa%20LongeViva%20de%203%20meses%20por%208000MT!" class="btn">QUERO MINHA VAGA POR 8000MT</a>
         </div>
     </section>
 
@@ -852,19 +955,13 @@
             <div class="footer-content">
                 <div class="footer-logo">LongeViva</div>
                 <div class="footer-links">
-                    <a href="#home">Início</a>
-                    <a href="#benefits">Benefícios</a>
-                    <a href="#about">Sobre</a>
-                    <a href="#testimonials">Depoimentos</a>
-                    <a href="#contact">Contato</a>
-                </div>
                 <p class="copyright">© 2023 LongeViva. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
 
     <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/258851760874?text=Olá!%20Quero%20aderir%20ao%20programa%20LongeViva%20agora!" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/258851760874?text=Olá!%20Quero%20aderir%20ao%20programa%20LongeViva%20de%203%20meses%20por%208000MT!" class="whatsapp-float" target="_blank">
         <div class="whatsapp-icon"><i class="fab fa-whatsapp"></i></div>
     </a>
 
@@ -907,142 +1004,4 @@
         let startPos = 0;
         let currentTranslate = 0;
         let prevTranslate = 0;
-        let animationID;
-
-        // Touch events for mobile swipe
-        slider.addEventListener('touchstart', touchStart);
-        slider.addEventListener('touchmove', touchMove);
-        slider.addEventListener('touchend', touchEnd);
-
-        // Mouse events for desktop drag
-        slider.addEventListener('mousedown', touchStart);
-        slider.addEventListener('mousemove', touchMove);
-        slider.addEventListener('mouseup', touchEnd);
-        slider.addEventListener('mouseleave', touchEnd);
-
-        function touchStart(event) {
-            if (event.type === 'touchstart') {
-                startPos = event.touches[0].clientX;
-            } else {
-                startPos = event.clientX;
-                event.preventDefault();
-            }
-            
-            isDragging = true;
-            animationID = requestAnimationFrame(animation);
-            slider.style.cursor = 'grabbing';
-        }
-
-        function touchMove(event) {
-            if (!isDragging) return;
-            
-            let currentPosition;
-            if (event.type === 'touchmove') {
-                currentPosition = event.touches[0].clientX;
-            } else {
-                currentPosition = event.clientX;
-            }
-            
-            const currentDiff = currentPosition - startPos;
-            
-            // Only allow horizontal dragging
-            if (Math.abs(currentDiff) > 10) {
-                currentTranslate = prevTranslate + currentDiff;
-            }
-        }
-
-        function touchEnd() {
-            if (!isDragging) return;
-            
-            isDragging = false;
-            cancelAnimationFrame(animationID);
-            slider.style.cursor = 'grab';
-            
-            const movedBy = currentTranslate - prevTranslate;
-            
-            // If moved enough, change slide
-            if (movedBy < -100 && currentSlide < slides.length - 1) {
-                currentSlide += 1;
-            }
-            
-            if (movedBy > 100 && currentSlide > 0) {
-                currentSlide -= 1;
-            }
-            
-            setPositionByIndex();
-        }
-
-        function animation() {
-            setSliderPosition();
-            if (isDragging) requestAnimationFrame(animation);
-        }
-
-        function setSliderPosition() {
-            slider.style.transform = `translateX(${currentTranslate}px)`;
-        }
-
-        function setPositionByIndex() {
-            currentTranslate = currentSlide * -slider.offsetWidth;
-            prevTranslate = currentTranslate;
-            setSliderPosition();
-            
-            // Update active dot
-            dots.forEach(dot => dot.classList.remove('active'));
-            dots[currentSlide].classList.add('active');
-        }
-
-        function showSlide(index) {
-            if (index < 0) {
-                currentSlide = slides.length - 1;
-            } else if (index >= slides.length) {
-                currentSlide = 0;
-            } else {
-                currentSlide = index;
-            }
-            
-            setPositionByIndex();
-        }
-
-        // Add click events to dots
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                showSlide(index);
-            });
-        });
-
-        // Add click events to arrows
-        prevBtn.addEventListener('click', () => {
-            showSlide(currentSlide - 1);
-        });
-
-        nextBtn.addEventListener('click', () => {
-            showSlide(currentSlide + 1);
-        });
-
-        // Auto slide change
-        setInterval(() => {
-            if (!isDragging) {
-                showSlide(currentSlide + 1);
-            }
-        }, 5000);
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+        let animationID

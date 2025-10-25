@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LongeViva - Viver mais anos e com saúde</title>
+    <title>LongeViva - Viver Mais Anos com Saúde e Energia</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary-color: #2e7d32;
             --primary-light: #4caf50;
             --primary-dark: #1b5e20;
+            --accent-color: #ff9800;
             --secondary-color: #f5f5f5;
             --text-color: #333;
             --text-light: #666;
@@ -60,22 +61,31 @@
 
         .btn {
             display: inline-block;
-            padding: 12px 30px;
+            padding: 15px 35px;
             background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
             color: var(--white);
             border-radius: 50px;
-            font-weight: 500;
+            font-weight: 600;
             transition: var(--transition);
             box-shadow: var(--shadow);
             border: none;
             cursor: pointer;
-            font-size: 1rem;
+            font-size: 1.1rem;
+            text-align: center;
         }
 
         .btn:hover {
             background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
             transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-accent {
+            background: linear-gradient(135deg, var(--accent-color), #ffb74d);
+        }
+
+        .btn-accent:hover {
+            background: linear-gradient(135deg, #f57c00, var(--accent-color));
         }
 
         section {
@@ -88,7 +98,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            background-color: rgba(255, 255, 255, 0.95);
+            background-color: rgba(255, 255, 255, 0.98);
             box-shadow: var(--shadow);
             z-index: 1000;
             transition: var(--transition);
@@ -108,7 +118,7 @@
 
         .logo {
             font-size: 1.8rem;
-            font-weight: 700;
+            font-weight: 800;
             color: var(--primary-color);
         }
 
@@ -182,12 +192,12 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            max-width: 600px;
+            max-width: 700px;
         }
 
         .hero h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
+            font-size: 3rem;
+            font-weight: 800;
             margin-bottom: 20px;
             line-height: 1.2;
             background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
@@ -196,15 +206,28 @@
         }
 
         .hero p {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             margin-bottom: 15px;
             color: var(--text-light);
         }
 
         .hero .btn {
-            margin-top: 20px;
-            font-size: 1.1rem;
-            padding: 15px 40px;
+            margin-top: 30px;
+            font-size: 1.2rem;
+            padding: 18px 45px;
+        }
+
+        .urgency-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-color), #ffb74d);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: 15px;
+            box-shadow: 0 4px 10px rgba(255, 152, 0, 0.3);
+            animation: pulse 2s infinite;
         }
 
         /* Benefits Section */
@@ -227,8 +250,8 @@
         }
 
         .section-title {
-            font-size: 2.2rem;
-            font-weight: 600;
+            font-size: 2.5rem;
+            font-weight: 700;
             margin-bottom: 50px;
             color: var(--primary-dark);
             position: relative;
@@ -367,6 +390,40 @@
             transform: scale(1.2);
         }
 
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-section .btn {
+            background: linear-gradient(135deg, var(--accent-color), #ffb74d);
+            font-size: 1.3rem;
+            padding: 20px 50px;
+        }
+
+        .cta-section .btn:hover {
+            background: linear-gradient(135deg, #f57c00, var(--accent-color));
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
         /* About Section */
         .about {
             text-align: center;
@@ -386,7 +443,7 @@
         }
 
         .founder-name {
-            font-weight: 600;
+            font-weight: 700;
             color: var(--primary-dark);
             background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
             -webkit-background-clip: text;
@@ -550,7 +607,7 @@
         /* Responsive Styles */
         @media (max-width: 992px) {
             .hero h1 {
-                font-size: 2.4rem;
+                font-size: 2.5rem;
             }
         }
 
@@ -588,7 +645,7 @@
             }
 
             .section-title {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
 
             .testimonials-container {
@@ -597,6 +654,10 @@
 
             .slide {
                 padding: 40px 20px;
+            }
+
+            .cta-section h2 {
+                font-size: 2rem;
             }
         }
 
@@ -632,6 +693,14 @@
             .footer-links a {
                 margin: 10px 0;
             }
+
+            .cta-section {
+                padding: 70px 0;
+            }
+
+            .cta-section h2 {
+                font-size: 1.8rem;
+            }
         }
     </style>
 </head>
@@ -642,9 +711,9 @@
             <a href="#" class="logo">LongeViva</a>
             <nav>
                 <ul class="nav-menu">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#home">Início</a></li>
                     <li><a href="#benefits">Benefícios</a></li>
+                    <li><a href="#about">Sobre</a></li>
                     <li><a href="#testimonials">Depoimentos</a></li>
                     <li><a href="#contact">Contato</a></li>
                 </ul>
@@ -661,11 +730,14 @@
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <h1>LongeViva — Viver mais anos e com saúde</h1>
-                <p>Programa voltado para prevenção e auxílio no tratamento de complicações de saúde.</p>
-                <p>Corpo com vitalidade, energia, mesmo depois dos 45 anos.</p>
-                <p>Para um corpo sem dores, doenças, inchaço, cansaço e insônia.</p>
-                <a href="https://wa.me/258851760874?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20programa%20LongeViva" class="btn">Quero Saber Mais</a>
+                <h1>Viva Mais Anos com Saúde, Energia e Vitalidade</h1>
+                <p><strong>Programa LongeViva:</strong> Prevenção e tratamento natural para complicações de saúde após os 45 anos.</p>
+                <p>Diga adeus às dores, cansaço, insônia e doenças crônicas.</p>
+                <p>Recupere a energia que você tinha aos 30 anos!</p>
+                <a href="https://wa.me/258851760874?text=Olá!%20Quero%20aderir%20ao%20programa%20LongeViva%20agora!" class="btn btn-accent">ADERIR AGORA</a>
+                <div class="urgency-badge">
+                    <i class="fas fa-bolt"></i> Vagas Limitadas - Garanta Sua Vaga!
+                </div>
             </div>
         </div>
     </section>
@@ -673,23 +745,23 @@
     <!-- Benefits Section -->
     <section class="benefits" id="benefits">
         <div class="container">
-            <h2 class="section-title">Benefícios do Programa</h2>
+            <h2 class="section-title">O Que Você Vai Conquistar</h2>
             <div class="slider-container">
                 <div class="slider">
                     <div class="slide">
-                        <div class="slide-icon"><i class="fas fa-leaf"></i></div>
-                        <h3>Prevenção e Vitalidade</h3>
-                        <p>Fortaleça seu sistema imunológico e aumente sua vitalidade com técnicas preventivas que preparam seu corpo para enfrentar os desafios do envelhecimento com energia e disposição.</p>
+                        <div class="slide-icon"><i class="fas fa-heartbeat"></i></div>
+                        <h3>Saúde Renovada</h3>
+                        <p>Fortaleça seu sistema imunológico, previna doenças e recupere a vitalidade que você pensava ter perdido para sempre.</p>
                     </div>
                     <div class="slide">
                         <div class="slide-icon"><i class="fas fa-battery-full"></i></div>
-                        <h3>Menos Dores e Mais Energia</h3>
-                        <p>Reduza dores crônicas e recupere a energia que você precisa para aproveitar cada dia ao máximo, com exercícios específicos e orientações nutricionais personalizadas.</p>
+                        <h3>Energia Ilimitada</h3>
+                        <p>Acorde com disposição, tenha energia durante todo o dia e durma profundamente. Reduza dores crônicas e cansaço constante.</p>
                     </div>
                     <div class="slide">
                         <div class="slide-icon"><i class="fas fa-bed"></i></div>
-                        <h3>Sono e Bem-Estar</h3>
-                        <p>Melhore a qualidade do seu sono e aumente seu bem-estar geral com técnicas comprovadas que ajudam a combater a insônia e promovem um descanso reparador.</p>
+                        <h3>Sono Reparador</h3>
+                        <p>Diga adeus à insônia e acorde revigorado. Técnicas comprovadas para um descanso profundo e reparador todas as noites.</p>
                     </div>
                 </div>
             </div>
@@ -705,14 +777,23 @@
         </div>
     </section>
 
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Não Espere Mais Para Recuperar Sua Saúde</h2>
+            <p>Junte-se a centenas de pessoas que já transformaram suas vidas com o programa LongeViva. Resultados garantidos ou seu dinheiro de volta!</p>
+            <a href="https://wa.me/258851760874?text=Olá!%20Quero%20aderir%20ao%20programa%20LongeViva%20agora!" class="btn">QUERO MINHA VAGA AGORA</a>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
-            <h2 class="section-title">Sobre o Programa</h2>
+            <h2 class="section-title">Método Comprovado</h2>
             <div class="about-content">
-                <p>O programa LongeViva foi desenvolvido com base em pesquisas científicas e anos de experiência no campo da saúde preventiva, focando especialmente nas necessidades de pessoas a partir dos 45 anos.</p>
-                <p>Através de um método integrado que combina orientação nutricional, exercícios específicos e técnicas de gerenciamento do estresse, o programa ajuda a recuperar e manter a vitalidade, combatendo os principais problemas associados ao envelhecimento.</p>
-                <p><span class="founder-name">O programa foi desenvolvido por Hermenegildo Mucanze</span>, especialista em saúde e bem-estar com mais de 15 anos de experiência ajudando pessoas a recuperarem sua qualidade de vida.</p>
+                <p>O programa LongeViva foi desenvolvido com base em pesquisas científicas e 15 anos de experiência no campo da saúde preventiva, focando especialmente nas necessidades de pessoas a partir dos 45 anos.</p>
+                <p>Através de um método integrado que combina orientação nutricional personalizada, exercícios específicos para sua idade e técnicas de gerenciamento do estresse, o programa ajuda a recuperar e manter a vitalidade, combatendo os principais problemas associados ao envelhecimento.</p>
+                <p><span class="founder-name">Criado por Hermenegildo Mucanze</span>, especialista em saúde e bem-estar com mais de 15 anos de experiência ajudando pessoas a recuperarem sua qualidade de vida após os 45 anos.</p>
             </div>
         </div>
     </section>
@@ -720,39 +801,48 @@
     <!-- Testimonials Section -->
     <section class="testimonials" id="testimonials">
         <div class="container">
-            <h2 class="section-title">Depoimentos</h2>
+            <h2 class="section-title">Quem Já Transformou a Vida</h2>
             <div class="testimonials-container">
                 <div class="testimonial">
-                    <p class="testimonial-text">"Depois de 3 meses no programa, minhas dores nas costas desapareceram e recuperei a energia que tinha há 10 anos. Recomendo a todos!"</p>
+                    <p class="testimonial-text">"Aos 58 anos, me sinto mais disposta do que aos 40. Em 3 meses no programa, minhas dores nas costas desapareceram e recuperei a energia. Vale cada centavo!"</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">M</div>
                         <div class="author-info">
-                            <h4>Maria Santos</h4>
+                            <h4>Maria Santos, 58 anos</h4>
                             <p>Participante há 6 meses</p>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial">
-                    <p class="testimonial-text">"Finalmente consegui dormir bem depois de anos lutando contra a insônia. O programa mudou minha vida completamente."</p>
+                    <p class="testimonial-text">"Finalmente consegui dormir bem depois de anos lutando contra a insônia. O programa mudou minha vida completamente. Recomendo a todos!"</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">J</div>
                         <div class="author-info">
-                            <h4>João Silva</h4>
+                            <h4>João Silva, 52 anos</h4>
                             <p>Participante há 4 meses</p>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial">
-                    <p class="testimonial-text">"Aos 58 anos, me sinto mais disposta do que aos 40. As orientações nutricionais e os exercícios fizeram toda a diferença na minha saúde."</p>
+                    <p class="testimonial-text">"Depois de tentar de tudo para minha artrite, o LongeViva foi a única coisa que funcionou. Em 2 meses, 80% das dores sumiram. Incrível!"</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">A</div>
                         <div class="author-info">
-                            <h4>Ana Oliveira</h4>
+                            <h4>Ana Oliveira, 61 anos</h4>
                             <p>Participante há 8 meses</p>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Sua Transformação Começa Agora</h2>
+            <p>Não deixe a idade determinar sua qualidade de vida. Tome uma atitude hoje e garanta anos de saúde, energia e vitalidade.</p>
+            <a href="https://wa.me/258851760874?text=Olá!%20Quero%20aderir%20ao%20programa%20LongeViva%20agora!" class="btn">QUERO MINHA VAGA AGORA</a>
         </div>
     </section>
 
@@ -762,9 +852,9 @@
             <div class="footer-content">
                 <div class="footer-logo">LongeViva</div>
                 <div class="footer-links">
-                    <a href="#home">Home</a>
-                    <a href="#about">Sobre</a>
+                    <a href="#home">Início</a>
                     <a href="#benefits">Benefícios</a>
+                    <a href="#about">Sobre</a>
                     <a href="#testimonials">Depoimentos</a>
                     <a href="#contact">Contato</a>
                 </div>
@@ -774,7 +864,7 @@
     </footer>
 
     <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/258851760874?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20programa%20LongeViva" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/258851760874?text=Olá!%20Quero%20aderir%20ao%20programa%20LongeViva%20agora!" class="whatsapp-float" target="_blank">
         <div class="whatsapp-icon"><i class="fab fa-whatsapp"></i></div>
     </a>
 

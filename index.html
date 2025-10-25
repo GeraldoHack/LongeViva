@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LongeViva - Viver mais anos e com saúde</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2e7d32;
+            --primary-light: #4caf50;
+            --primary-dark: #1b5e20;
+            --secondary-color: #f5f5f5;
+            --text-color: #333;
+            --text-light: #666;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            color: var(--white);
+            border-radius: 50px;
+            font-weight: 500;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+
+        header.scrolled {
+            padding: 10px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .nav-menu {
+            display: flex;
+        }
+
+        .nav-menu li {
+            margin-left: 30px;
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-color);
+            margin: 5px;
+            transition: var(--transition);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 150px;
+            background: linear-gradient(135deg, rgba(46, 125, 50, 0.1) 0%, rgba(255, 255, 255, 1) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(76, 175, 80, 0.05)"/></svg>');
+            background-size: cover;
+            z-index: -1;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+
+        .hero .btn {
+            margin-top: 20px;
+            font-size: 1.1rem;
+            padding: 15px 40px;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            background: linear-gradient(135deg, #f8fff8 0%, #e8f5e9 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefits::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(76, 175, 80, 0.05) 0%, transparent 70%);
+            z-index: 0;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 50px;
+            color: var(--primary-dark);
+            position: relative;
+            display: inline-block;
+            z-index: 1;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary-light), var(--primary-color));
+            border-radius: 2px;
+        }
+
+        .slider-container {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease;
+            cursor: grab;
+        }
+
+        .slider:active {
+            cursor: grabbing;
+        }
+
+        .slide {
+            min-width: 100%;
+            padding: 60px 40px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fff8 100%);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary-light), var(--primary-color));
+        }
+
+        .slide-icon {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            color: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: var(--transition);
+        }
+
+        .slide:hover .slide-icon {
+            transform: scale(1.1);
+        }
+
+        .slide h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+        }
+
+        .slide p {
+            color: var(--text-light);
+            max-width: 500px;
+            line-height: 1.7;
+        }
+
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+            z-index: 1;
+            position: relative;
+        }
+
+        .slider-arrow {
+            background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            margin: 0 10px;
+        }
+
+        .slider-arrow:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .slider-dots {
+            display: flex;
+            margin: 0 20px;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ccc;
+            margin: 0 8px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .slider-dot.active {
+            background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+            transform: scale(1.2);
+        }
+
+        /* About Section */
+        .about {
+            text-align: center;
+            background: linear-gradient(135deg, #ffffff 0%, #f5f9f5 100%);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+
+        .founder-name {
+            font-weight: 600;
+            color: var(--primary-dark);
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
+        }
+
+        .testimonials-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .testimonial {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fff8 100%);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 5rem;
+            color: rgba(76, 175, 80, 0.1);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .testimonial:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--text-light);
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 600;
+            margin-right: 15px;
+        }
+
+        .author-info h4 {
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+            color: var(--white);
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            margin-bottom: 30px;
+        }
+
+        .footer-links a {
+            margin: 0 15px;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: #c8e6c9;
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 20px;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #25d366, #128C7E);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            z-index: 1000;
+            transition: var(--transition);
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.7);
+        }
+
+        .whatsapp-icon {
+            font-size: 1.8rem;
+            color: var(--white);
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                width: 70%;
+                height: calc(100vh - 80px);
+                background-color: rgba(255, 255, 255, 0.98);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 50px;
+                transition: var(--transition);
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                backdrop-filter: blur(10px);
+            }
+
+            .nav-menu.active {
+                right: 0;
+            }
+
+            .nav-menu li {
+                margin: 20px 0;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .testimonials-container {
+                grid-template-columns: 1fr;
+            }
+
+            .slide {
+                padding: 40px 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding-top: 120px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .slide {
+                padding: 30px 15px;
+            }
+
+            .slide h3 {
+                font-size: 1.5rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+            }
+
+            .footer-links a {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="#" class="logo">LongeViva</a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#benefits">Benefícios</a></li>
+                    <li><a href="#testimonials">Depoimentos</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+                <div class="hamburger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>LongeViva — Viver mais anos e com saúde</h1>
+                <p>Programa voltado para prevenção e auxílio no tratamento de complicações de saúde.</p>
+                <p>Corpo com vitalidade, energia, mesmo depois dos 45 anos.</p>
+                <p>Para um corpo sem dores, doenças, inchaço, cansaço e insônia.</p>
+                <a href="https://wa.me/258851760874?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20programa%20LongeViva" class="btn">Quero Saber Mais</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits" id="benefits">
+        <div class="container">
+            <h2 class="section-title">Benefícios do Programa</h2>
+            <div class="slider-container">
+                <div class="slider">
+                    <div class="slide">
+                        <div class="slide-icon"><i class="fas fa-leaf"></i></div>
+                        <h3>Prevenção e Vitalidade</h3>
+                        <p>Fortaleça seu sistema imunológico e aumente sua vitalidade com técnicas preventivas que preparam seu corpo para enfrentar os desafios do envelhecimento com energia e disposição.</p>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-icon"><i class="fas fa-battery-full"></i></div>
+                        <h3>Menos Dores e Mais Energia</h3>
+                        <p>Reduza dores crônicas e recupere a energia que você precisa para aproveitar cada dia ao máximo, com exercícios específicos e orientações nutricionais personalizadas.</p>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-icon"><i class="fas fa-bed"></i></div>
+                        <h3>Sono e Bem-Estar</h3>
+                        <p>Melhore a qualidade do seu sono e aumente seu bem-estar geral com técnicas comprovadas que ajudam a combater a insônia e promovem um descanso reparador.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <button class="slider-arrow prev"><i class="fas fa-chevron-left"></i></button>
+                <div class="slider-dots">
+                    <div class="slider-dot active" data-slide="0"></div>
+                    <div class="slider-dot" data-slide="1"></div>
+                    <div class="slider-dot" data-slide="2"></div>
+                </div>
+                <button class="slider-arrow next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">Sobre o Programa</h2>
+            <div class="about-content">
+                <p>O programa LongeViva foi desenvolvido com base em pesquisas científicas e anos de experiência no campo da saúde preventiva, focando especialmente nas necessidades de pessoas a partir dos 45 anos.</p>
+                <p>Através de um método integrado que combina orientação nutricional, exercícios específicos e técnicas de gerenciamento do estresse, o programa ajuda a recuperar e manter a vitalidade, combatendo os principais problemas associados ao envelhecimento.</p>
+                <p><span class="founder-name">O programa foi desenvolvido por Hermenegildo Mucanze</span>, especialista em saúde e bem-estar com mais de 15 anos de experiência ajudando pessoas a recuperarem sua qualidade de vida.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">Depoimentos</h2>
+            <div class="testimonials-container">
+                <div class="testimonial">
+                    <p class="testimonial-text">"Depois de 3 meses no programa, minhas dores nas costas desapareceram e recuperei a energia que tinha há 10 anos. Recomendo a todos!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">M</div>
+                        <div class="author-info">
+                            <h4>Maria Santos</h4>
+                            <p>Participante há 6 meses</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"Finalmente consegui dormir bem depois de anos lutando contra a insônia. O programa mudou minha vida completamente."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">J</div>
+                        <div class="author-info">
+                            <h4>João Silva</h4>
+                            <p>Participante há 4 meses</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"Aos 58 anos, me sinto mais disposta do que aos 40. As orientações nutricionais e os exercícios fizeram toda a diferença na minha saúde."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">A</div>
+                        <div class="author-info">
+                            <h4>Ana Oliveira</h4>
+                            <p>Participante há 8 meses</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">LongeViva</div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">Sobre</a>
+                    <a href="#benefits">Benefícios</a>
+                    <a href="#testimonials">Depoimentos</a>
+                    <a href="#contact">Contato</a>
+                </div>
+                <p class="copyright">© 2023 LongeViva. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/258851760874?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20programa%20LongeViva" class="whatsapp-float" target="_blank">
+        <div class="whatsapp-icon"><i class="fab fa-whatsapp"></i></div>
+    </a>
+
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Slider functionality
+        const slider = document.querySelector('.slider');
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.slider-dot');
+        const prevBtn = document.querySelector('.slider-arrow.prev');
+        const nextBtn = document.querySelector('.slider-arrow.next');
+        let currentSlide = 0;
+        let isDragging = false;
+        let startPos = 0;
+        let currentTranslate = 0;
+        let prevTranslate = 0;
+        let animationID;
+
+        // Touch events for mobile swipe
+        slider.addEventListener('touchstart', touchStart);
+        slider.addEventListener('touchmove', touchMove);
+        slider.addEventListener('touchend', touchEnd);
+
+        // Mouse events for desktop drag
+        slider.addEventListener('mousedown', touchStart);
+        slider.addEventListener('mousemove', touchMove);
+        slider.addEventListener('mouseup', touchEnd);
+        slider.addEventListener('mouseleave', touchEnd);
+
+        function touchStart(event) {
+            if (event.type === 'touchstart') {
+                startPos = event.touches[0].clientX;
+            } else {
+                startPos = event.clientX;
+                event.preventDefault();
+            }
+            
+            isDragging = true;
+            animationID = requestAnimationFrame(animation);
+            slider.style.cursor = 'grabbing';
+        }
+
+        function touchMove(event) {
+            if (!isDragging) return;
+            
+            let currentPosition;
+            if (event.type === 'touchmove') {
+                currentPosition = event.touches[0].clientX;
+            } else {
+                currentPosition = event.clientX;
+            }
+            
+            const currentDiff = currentPosition - startPos;
+            
+            // Only allow horizontal dragging
+            if (Math.abs(currentDiff) > 10) {
+                currentTranslate = prevTranslate + currentDiff;
+            }
+        }
+
+        function touchEnd() {
+            if (!isDragging) return;
+            
+            isDragging = false;
+            cancelAnimationFrame(animationID);
+            slider.style.cursor = 'grab';
+            
+            const movedBy = currentTranslate - prevTranslate;
+            
+            // If moved enough, change slide
+            if (movedBy < -100 && currentSlide < slides.length - 1) {
+                currentSlide += 1;
+            }
+            
+            if (movedBy > 100 && currentSlide > 0) {
+                currentSlide -= 1;
+            }
+            
+            setPositionByIndex();
+        }
+
+        function animation() {
+            setSliderPosition();
+            if (isDragging) requestAnimationFrame(animation);
+        }
+
+        function setSliderPosition() {
+            slider.style.transform = `translateX(${currentTranslate}px)`;
+        }
+
+        function setPositionByIndex() {
+            currentTranslate = currentSlide * -slider.offsetWidth;
+            prevTranslate = currentTranslate;
+            setSliderPosition();
+            
+            // Update active dot
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[currentSlide].classList.add('active');
+        }
+
+        function showSlide(index) {
+            if (index < 0) {
+                currentSlide = slides.length - 1;
+            } else if (index >= slides.length) {
+                currentSlide = 0;
+            } else {
+                currentSlide = index;
+            }
+            
+            setPositionByIndex();
+        }
+
+        // Add click events to dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+            });
+        });
+
+        // Add click events to arrows
+        prevBtn.addEventListener('click', () => {
+            showSlide(currentSlide - 1);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            showSlide(currentSlide + 1);
+        });
+
+        // Auto slide change
+        setInterval(() => {
+            if (!isDragging) {
+                showSlide(currentSlide + 1);
+            }
+        }, 5000);
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

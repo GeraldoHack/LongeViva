@@ -327,6 +327,89 @@
             color: var(--text-light);
         }
 
+        /* Video Testimonial */
+        .video-testimonial {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .video-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-container video {
+            width: 100%;
+            display: block;
+            border-radius: 15px;
+        }
+
+        .video-caption {
+            margin-top: 15px;
+            font-style: italic;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        /* Before After Section */
+        .before-after {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .before-after-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .before-after-item {
+            flex: 1;
+            min-width: 300px;
+            max-width: 400px;
+        }
+
+        .before-after-item img {
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            transition: var(--transition);
+        }
+
+        .before-after-item img:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .before-after-label {
+            margin-top: 15px;
+            font-weight: 600;
+            color: var(--primary-dark);
+            font-size: 1.2rem;
+        }
+
+        .results-highlight {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .results-highlight h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
         /* CTA Intermediate Section */
         .cta-intermediate {
             background: linear-gradient(135deg, #2196F3, #E91E63);
@@ -778,6 +861,15 @@
                 flex-direction: column;
                 align-items: center;
             }
+
+            .before-after-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .before-after-item {
+                min-width: 100%;
+            }
         }
 
         @media (max-width: 576px) {
@@ -871,6 +963,18 @@
     <section class="testimonials" id="testimonials">
         <div class="container">
             <h2 class="section-title">Quem Já Transformou a Vida</h2>
+            
+            <!-- Video Testimonial -->
+            <div class="video-testimonial">
+                <div class="video-container">
+                    <video controls poster="https://i.postimg.cc/L6X4wbLd/Screenshot-20251028-065121.jpg">
+                        <source src="https://raw.githubusercontent.com/GeraldoHack/Video/main/VID-20251027-WA0056.mp4" type="video/mp4">
+                        Seu navegador não suporta o elemento de vídeo.
+                    </video>
+                </div>
+                <p class="video-caption">Depoimento real de uma participante do programa LongeViva</p>
+            </div>
+
             <div class="testimonials-container">
                 <div class="testimonial">
                     <p class="testimonial-text">"Senti-me viva novamente. Hoje acordo com energia e vontade de cuidar de mim."</p>
@@ -898,6 +1002,21 @@
                             <h4>Ana Oliveira, 61 anos</h4>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <!-- Before/After Section -->
+            <div class="before-after">
+                <h3 style="color: var(--primary-dark); margin-bottom: 30px; font-size: 2rem;">Resultados Reais</h3>
+                <div class="before-after-container">
+                    <div class="before-after-item">
+                        <img src="https://i.postimg.cc/GhQ351Hf/IMG-20251027-WA0048.jpg" alt="Resultado antes e depois do programa LongeViva">
+                        <div class="before-after-label">Transformação Real</div>
+                    </div>
+                </div>
+                <div class="results-highlight">
+                    <h3>Resultados Impressionantes em Apenas 90 Dias!</h3>
+                    <p>Veja como o programa LongeViva transforma vidas com resultados comprovados</p>
                 </div>
             </div>
         </div>

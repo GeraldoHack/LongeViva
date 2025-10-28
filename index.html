@@ -327,41 +327,55 @@
             color: var(--text-light);
         }
 
-        /* Video Testimonial */
-        .video-testimonial {
+        /* Video Testimonials Section */
+        .video-testimonials {
             grid-column: 1 / -1;
             text-align: center;
             margin-bottom: 40px;
         }
 
+        .testimonial-with-video {
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
         .video-container {
             position: relative;
-            max-width: 800px;
-            margin: 0 auto;
+            max-width: 600px;
+            margin: 0 auto 20px;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
 
         .video-container iframe {
             width: 100%;
-            height: 450px;
+            height: 350px;
             border: none;
             border-radius: 15px;
         }
 
-        .video-caption {
-            margin-top: 15px;
-            font-style: italic;
-            color: var(--text-light);
-            font-size: 1.1rem;
+        .video-container video {
+            width: 100%;
+            height: 350px;
+            border-radius: 15px;
+            display: block;
+        }
+
+        .testimonial-content {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fff8 100%);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         /* Before After Section */
         .before-after {
             grid-column: 1 / -1;
             text-align: center;
-            margin-top: 40px;
+            margin: 40px 0;
         }
 
         .before-after-container {
@@ -804,8 +818,9 @@
                 transform: translateY(-10px);
             }
 
-            .video-container iframe {
-                height: 400px;
+            .video-container iframe,
+            .video-container video {
+                height: 300px;
             }
         }
 
@@ -876,8 +891,9 @@
                 min-width: 100%;
             }
 
-            .video-container iframe {
-                height: 300px;
+            .video-container iframe,
+            .video-container video {
+                height: 250px;
             }
         }
 
@@ -922,8 +938,9 @@
                 font-size: 1.4rem;
             }
 
-            .video-container iframe {
-                height: 250px;
+            .video-container iframe,
+            .video-container video {
+                height: 200px;
             }
         }
     </style>
@@ -977,8 +994,8 @@
         <div class="container">
             <h2 class="section-title">Quem Já Transformou a Vida</h2>
             
-            <!-- Video Testimonial -->
-            <div class="video-testimonial">
+            <!-- YouTube Video + Maria -->
+            <div class="testimonial-with-video">
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/Ym3fOVybUto" 
                             title="Depoimento LongeViva - Resultados Reais" 
@@ -986,56 +1003,69 @@
                             allowfullscreen>
                     </iframe>
                 </div>
-                <p class="video-caption">Depoimento real de uma participante do programa LongeViva - Veja os resultados impressionantes!</p>
-            </div>
-
-            <div class="testimonials-container">
-                <div class="testimonial">
-                    <p class="testimonial-text">"Senti-me viva novamente. Hoje acordo com energia e vontade de cuidar de mim."</p>
+                <div class="testimonial-content">
+                    <p class="testimonial-text">"Senti-me viva novamente. Hoje acordo com energia e vontade de cuidar de mim. O programa mudou completamente minha perspectiva sobre envelhecer com saúde."</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">M</div>
                         <div class="author-info">
                             <h4>Maria, 52 anos</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial">
-                    <p class="testimonial-text">"Finalmente consegui dormir bem depois de anos lutando contra a insônia. O programa de 3 meses mudou minha vida completamente."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">J</div>
-                        <div class="author-info">
-                            <h4>João Silva, 52 anos</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial">
-                    <p class="testimonial-text">"Depois de tentar de tudo para minha artrite, o LongeViva foi a única coisa que funcionou. Em 2 meses, 80% das dores sumiram. Incrível!"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">A</div>
-                        <div class="author-info">
-                            <h4>Ana Oliveira, 61 anos</h4>
+                            <p>Participante há 3 meses</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Before/After Section -->
+            <!-- GitHub Video + João -->
+            <div class="testimonial-with-video">
+                <div class="video-container">
+                    <video controls poster="https://i.postimg.cc/L6X4wbLd/Screenshot-20251028-065121.jpg">
+                        <source src="https://raw.githubusercontent.com/GeraldoHack/Video/main/VID-20251027-WA0056.mp4" type="video/mp4">
+                        Seu navegador não suporta o elemento de vídeo.
+                    </video>
+                </div>
+                <div class="testimonial-content">
+                    <p class="testimonial-text">"Finalmente consegui dormir bem depois de anos lutando contra a insônia. O programa de 3 meses mudou minha vida completamente. Hoje tenho energia para brincar com meus netos!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">J</div>
+                        <div class="author-info">
+                            <h4>João Silva, 52 anos</h4>
+                            <p>Participante há 2 meses</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Imagem Resultados + Ana -->
             <div class="before-after">
                 <h3 style="color: var(--primary-dark); margin-bottom: 30px; font-size: 2rem;">Resultados Reais</h3>
                 <div class="before-after-container">
                     <div class="before-after-item">
                         <img src="https://i.postimg.cc/GhQ351Hf/IMG-20251027-WA0048.jpg" alt="Resultado antes e depois do programa LongeViva">
-                        <div class="before-after-label">Transformação Real</div>
+                        <div class="before-after-label">Transformação Real em 90 Dias</div>
                     </div>
                 </div>
+                
+                <div class="testimonial" style="margin-top: 40px;">
+                    <p class="testimonial-text">"Depois de tentar de tudo para minha artrite, o LongeViva foi a única coisa que funcionou. Em 2 meses, 80% das dores sumiram. Incrível como recuperei minha mobilidade!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">A</div>
+                        <div class="author-info">
+                            <h4>Ana Oliveira, 61 anos</h4>
+                            <p>Participante há 2 meses</p>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="results-highlight">
                     <h3>Resultados Impressionantes em Apenas 90 Dias!</h3>
                     <p>Veja como o programa LongeViva transforma vidas com resultados comprovados</p>
                 </div>
             </div>
+
         </div>
     </section>
 
+    <!-- Resto do código permanece igual -->
     <!-- CTA Intermediate Section -->
     <section class="cta-intermediate" id="cta-intermediate">
         <div class="container">

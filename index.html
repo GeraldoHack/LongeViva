@@ -251,21 +251,21 @@
             animation: pulse 2s infinite;
         }
 
-        /* Countdown Timer with Flip Animation */
-        .countdown-container {
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
-            color: white;
-            padding: 30px;
+        /* Countdown Timer in CTA Section */
+        .countdown-cta {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 25px;
             border-radius: 15px;
-            text-align: center;
-            margin: 40px 0;
-            box-shadow: var(--shadow);
+            margin: 30px 0;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
         }
 
         .countdown-title {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            font-weight: 600;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            font-weight: 700;
+            text-align: center;
         }
 
         .countdown {
@@ -276,64 +276,34 @@
         }
 
         .countdown-item {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 15px;
-            border-radius: 10px;
-            min-width: 80px;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 20px 15px;
+            border-radius: 12px;
+            min-width: 90px;
             backdrop-filter: blur(10px);
-            position: relative;
-            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .countdown-number {
-            font-size: 2rem;
-            font-weight: 700;
+            font-size: 2.5rem;
+            font-weight: 800;
             display: block;
-            position: relative;
-            height: 45px;
-            line-height: 45px;
-            perspective: 200px;
-        }
-
-        .countdown-digit {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 5px;
-            transform-style: preserve-3d;
-        }
-
-        .countdown-digit.flip {
-            animation: flip 0.5s ease-in-out;
+            margin-bottom: 8px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .countdown-label {
-            font-size: 0.9rem;
+            font-size: 1rem;
             opacity: 0.9;
-            margin-top: 5px;
-        }
-
-        .countdown-message {
-            font-size: 1.1rem;
             font-weight: 500;
         }
 
-        @keyframes flip {
-            0% {
-                transform: rotateX(0deg);
-            }
-            50% {
-                transform: rotateX(90deg);
-            }
-            100% {
-                transform: rotateX(0deg);
-            }
+        .countdown-message {
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-align: center;
+            margin-top: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
         }
 
         /* Testimonials Section */
@@ -1037,7 +1007,12 @@
             }
 
             .countdown-item {
-                min-width: 70px;
+                min-width: 80px;
+                padding: 15px 10px;
+            }
+
+            .countdown-number {
+                font-size: 2rem;
             }
 
             .video-container iframe,
@@ -1088,14 +1063,16 @@
             }
 
             .countdown-item {
-                min-width: 60px;
-                padding: 10px;
+                min-width: 70px;
+                padding: 12px 8px;
             }
 
             .countdown-number {
+                font-size: 1.8rem;
+            }
+
+            .countdown-title {
                 font-size: 1.5rem;
-                height: 35px;
-                line-height: 35px;
             }
 
             .video-container iframe,
@@ -1148,46 +1125,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Countdown Timer -->
-    <div class="container">
-        <div class="countdown-container">
-            <div class="countdown-title">⏰ INSCRIÇÕES ENCERRAM EM:</div>
-            <div class="countdown" id="countdown">
-                <div class="countdown-item">
-                    <div class="countdown-number">
-                        <div class="countdown-digit" id="days-tens">0</div>
-                        <div class="countdown-digit" id="days-ones">0</div>
-                    </div>
-                    <span class="countdown-label">Dias</span>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-number">
-                        <div class="countdown-digit" id="hours-tens">0</div>
-                        <div class="countdown-digit" id="hours-ones">0</div>
-                    </div>
-                    <span class="countdown-label">Horas</span>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-number">
-                        <div class="countdown-digit" id="minutes-tens">0</div>
-                        <div class="countdown-digit" id="minutes-ones">0</div>
-                    </div>
-                    <span class="countdown-label">Minutos</span>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-number">
-                        <div class="countdown-digit" id="seconds-tens">0</div>
-                        <div class="countdown-digit" id="seconds-ones">0</div>
-                    </div>
-                    <span class="countdown-label">Segundos</span>
-                </div>
-            </div>
-            <div class="countdown-message">
-                🚀 As inscrições terminam no dia 2 de Novembro - Não perca esta oportunidade!
-            </div>
-        </div>
-    </div>
 
     <!-- Testimonials Section -->
     <section class="testimonials" id="testimonials">
@@ -1270,6 +1207,33 @@
         <div class="container">
             <h2 class="section-title white">As Inscrições Abrem no Dia 28 de Outubro</h2>
             <p>As 50 primeiras mulheres terão bônus e condições especiais.</p>
+            
+            <!-- Countdown Timer in CTA Section -->
+            <div class="countdown-cta">
+                <div class="countdown-title">⏰ AS INSCRIÇÕES ENCERRAM EM:</div>
+                <div class="countdown" id="countdown">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="days">00</span>
+                        <span class="countdown-label">Dias</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="hours">00</span>
+                        <span class="countdown-label">Horas</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="minutes">00</span>
+                        <span class="countdown-label">Minutos</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="seconds">00</span>
+                        <span class="countdown-label">Segundos</span>
+                    </div>
+                </div>
+                <div class="countdown-message">
+                    🚀 Não perca esta oportunidade única! As inscrições terminam no dia 2 de Novembro.
+                </div>
+            </div>
+
             <a href="#plans" class="btn btn-large">QUERO FAZER PARTE DO DESAFIO LONGEVIVA</a>
             <div class="bonus-info">
                 <div class="bonus-item">
@@ -1454,14 +1418,7 @@
             });
         });
 
-        // Countdown Timer with Flip Animation
-        let previousTime = {
-            days: 0,
-            hours: 0,
-            minutes: 0,
-            seconds: 0
-        };
-
+        // Countdown Timer - SIMPLE AND WORKING
         function updateCountdown() {
             const countdownDate = new Date('November 2, 2025 23:59:59').getTime();
             const now = new Date().getTime();
@@ -1477,51 +1434,13 @@
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            // Update digits with animation if they change
-            updateDigit('days', days, previousTime.days);
-            updateDigit('hours', hours, previousTime.hours);
-            updateDigit('minutes', minutes, previousTime.minutes);
-            updateDigit('seconds', seconds, previousTime.seconds);
-
-            previousTime = { days, hours, minutes, seconds };
-        }
-
-        function updateDigit(type, currentValue, previousValue) {
-            if (currentValue !== previousValue) {
-                const tens = Math.floor(currentValue / 10);
-                const ones = currentValue % 10;
-                
-                const prevTens = Math.floor(previousValue / 10);
-                const prevOnes = previousValue % 10;
-
-                // Update tens digit with animation
-                if (tens !== prevTens) {
-                    const tensElement = document.getElementById(`${type}-tens`);
-                    tensElement.textContent = tens;
-                    tensElement.classList.add('flip');
-                    setTimeout(() => tensElement.classList.remove('flip'), 500);
-                }
-
-                // Update ones digit with animation
-                if (ones !== prevOnes) {
-                    const onesElement = document.getElementById(`${type}-ones`);
-                    onesElement.textContent = ones;
-                    onesElement.classList.add('flip');
-                    setTimeout(() => onesElement.classList.remove('flip'), 500);
-                }
-            }
-        }
-
-        // Initialize digits
-        function initializeDigits() {
-            const digits = ['days-tens', 'days-ones', 'hours-tens', 'hours-ones', 'minutes-tens', 'minutes-ones', 'seconds-tens', 'seconds-ones'];
-            digits.forEach(digit => {
-                document.getElementById(digit).textContent = '0';
-            });
+            document.getElementById('days').innerText = days.toString().padStart(2, '0');
+            document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
         }
 
         // Update countdown every second
-        initializeDigits();
         setInterval(updateCountdown, 1000);
         updateCountdown(); // Initial call
     </script>

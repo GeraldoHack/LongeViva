@@ -20,6 +20,8 @@
             --white: #ffffff;
             --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s ease;
+            --gold: #ffd700;
+            --red: #e53935;
         }
 
         * {
@@ -266,6 +268,7 @@
             margin-bottom: 25px;
             font-weight: 700;
             text-align: center;
+            color: var(--red);
         }
 
         .countdown {
@@ -290,6 +293,7 @@
             display: block;
             margin-bottom: 8px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            color: var(--red);
         }
 
         .countdown-label {
@@ -762,6 +766,107 @@
             font-size: 1.1rem;
         }
 
+        /* Bonus Section */
+        .bonus {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .bonus .section-title {
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        .bonus .section-title::after {
+            background: linear-gradient(to right, var(--gold), #ffeb3b);
+        }
+
+        .bonus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .bonus-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .bonus-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .bonus-image {
+            margin-bottom: 20px;
+        }
+
+        .bonus-image img {
+            border-radius: 10px;
+            max-height: 200px;
+            object-fit: cover;
+        }
+
+        .bonus-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--gold);
+        }
+
+        .bonus-content p {
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .week-features {
+            text-align: left;
+        }
+
+        .week-features li {
+            margin-bottom: 10px;
+            padding-left: 10px;
+        }
+
+        /* Guarantee Section */
+        .guarantee {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            text-align: center;
+            padding: 60px 0;
+            margin: 50px 0;
+            border-radius: 15px;
+        }
+
+        .guarantee-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .guarantee-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .guarantee h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .guarantee p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
         /* Closing Section */
         .closing {
             background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
@@ -1015,6 +1120,14 @@
                 font-size: 2rem;
             }
 
+            .bonus-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .guarantee h3 {
+                font-size: 1.6rem;
+            }
+
             .video-container iframe,
             .video-container video {
                 height: 250px;
@@ -1075,6 +1188,18 @@
                 font-size: 1.5rem;
             }
 
+            .guarantee {
+                padding: 40px 20px;
+            }
+
+            .guarantee h3 {
+                font-size: 1.4rem;
+            }
+
+            .guarantee p {
+                font-size: 1rem;
+            }
+
             .video-container iframe,
             .video-container video {
                 height: 200px;
@@ -1096,6 +1221,7 @@
                     <li><a href="#testimonials">Depoimentos</a></li>
                     <li><a href="#emotional-benefits">Benefícios</a></li>
                     <li><a href="#plans">Planos</a></li>
+                    <li><a href="#bonus">Bônus</a></li>
                 </ul>
                 <div class="hamburger">
                     <div class="line1"></div>
@@ -1287,68 +1413,152 @@
         </div>
     </section>
 
-<!-- Plans Section -->
-<section class="plans" id="plans">
+    <!-- Plans Section -->
+    <section class="plans" id="plans">
+        <div class="container">
+            <h2 class="section-title">Planos e Inscrições</h2>
+            
+            <!-- Main Plan Card -->
+            <div class="plans-container">
+                <div class="plan-card" style="margin-bottom: 30px;">
+                    <h3 class="plan-name">Desafio LongeViva 90 Dias</h3>
+                    <p>Pagamento único (Não é mensal)</p>
+                    <div class="plan-price">6.500 MT</div>
+                    <div class="plan-period">Programa completo de transformação</div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check-circle"></i> Treinos personalizados para sua idade</li>
+                        <li><i class="fas fa-check-circle"></i> Plano alimentar individualizado</li>
+                        <li><i class="fas fa-check-circle"></i> Suporte especializado 24/7</li>
+                        <li><i class="fas fa-check-circle"></i> Materiais exclusivos em PDF</li>
+                        <li><i class="fas fa-check-circle"></i> Acompanhamento de progresso</li>
+                        <li><i class="fas fa-check-circle"></i> Comunidade de apoio</li>
+                    </ul>
+                    <a href="https://wa.me/258851760874?text=Olá!%20Quero%20me%20inscrever%20no%20Desafio%20LongeViva%20de%2090%20dias!" class="btn">QUERO ME INSCREVER</a>
+                </div>
+            </div>
+
+            <!-- Payment Facilities -->
+            <div class="payment-facilities">
+                <h3 class="payment-title">FACILIDADES DE PAGAMENTO</h3>
+                <div class="payment-options">
+                    <div class="payment-option">
+                        <h4>2 Parcelas</h4>
+                        <div class="payment-installments">
+                            3.800 MT + 2.700 MT
+                        </div>
+                    </div>
+                    <div class="payment-option">
+                        <h4>3 Parcelas</h4>
+                        <div class="payment-installments">
+                            3.000 MT + 2.000 MT + 1.500 MT
+                        </div>
+                    </div>
+                </div>
+                <p class="payment-note">* Valor total: 6.500 MT (Não é Mensal - Paga uma vez e acessos de 3 Meses do Programa)</p>
+            </div>
+
+            <!-- VIP List Card -->
+            <div class="plans-container">
+                <div class="plan-card vip">
+                    <div class="plan-badge">VIP</div>
+                    <h3 class="plan-name">Lista VIP</h3>
+                    <div class="plan-price">Gratuita</div>
+                    <div class="plan-period">Acesso antecipado e bônus exclusivos</div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check-circle"></i> Acesso antecipado às inscrições</li>
+                        <li><i class="fas fa-check-circle"></i> Bônus exclusivos para primeiras vagas</li>
+                        <li><i class="fas fa-check-circle"></i> Aulas pré-lançamento</li>
+                        <li><i class="fas fa-check-circle"></i> Condições especiais de pagamento</li>
+                    </ul>
+                    <a href="https://chat.whatsapp.com/L98TdFvyG6rKrZ1qzhSCwI?mode=wwt" class="btn btn-accent">ENTRAR NA LISTA VIP</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee Section -->
     <div class="container">
-        <h2 class="section-title">Planos e Inscrições</h2>
-        
-        <!-- Main Plan Card -->
-        <div class="plans-container">
-            <div class="plan-card" style="margin-bottom: 30px;">
-                <h3 class="plan-name">Desafio LongeViva 90 Dias</h3>
-                <p>Pagamento único (Não é mensal)</p>
-                <div class="plan-price">6.500 MT</div>
-                <div class="plan-period">Programa completo de transformação</div>
-                <ul class="plan-features">
-                    <li><i class="fas fa-check-circle"></i> Treinos personalizados para sua idade</li>
-                    <li><i class="fas fa-check-circle"></i> Plano alimentar individualizado</li>
-                    <li><i class="fas fa-check-circle"></i> Suporte especializado 24/7</li>
-                    <li><i class="fas fa-check-circle"></i> Materiais exclusivos em PDF</li>
-                    <li><i class="fas fa-check-circle"></i> Acompanhamento de progresso</li>
-                    <li><i class="fas fa-check-circle"></i> Comunidade de apoio</li>
-                </ul>
-                <a href="https://wa.me/258851760874?text=Olá!%20Quero%20me%20inscrever%20no%20Desafio%20LongeViva%20de%2090%20dias!" class="btn">QUERO ME INSCREVER</a>
-            </div>
-        </div>
-
-        <!-- Payment Facilities -->
-        <div class="payment-facilities">
-            <h3 class="payment-title">FACILIDADES DE PAGAMENTO</h3>
-            <div class="payment-options">
-                <div class="payment-option">
-                    <h4>2 Parcelas</h4>
-                    <div class="payment-installments">
-                        3.800 MT + 2.700 MT
-                    </div>
-                </div>
-                <div class="payment-option">
-                    <h4>3 Parcelas</h4>
-                    <div class="payment-installments">
-                        3.000 MT + 2.000 MT + 1.500 MT
-                    </div>
-                </div>
-            </div>
-            <p class="payment-note">* Valor total: 6.500 MT (Não é Mensal - Paga uma vez e acessos de 3 Meses do Programa)</p>
-        </div>
-
-        <!-- VIP List Card -->
-        <div class="plans-container">
-            <div class="plan-card vip">
-                <div class="plan-badge">VIP</div>
-                <h3 class="plan-name">Lista VIP</h3>
-                <div class="plan-price">Gratuita</div>
-                <div class="plan-period">Acesso antecipado e bônus exclusivos</div>
-                <ul class="plan-features">
-                    <li><i class="fas fa-check-circle"></i> Acesso antecipado às inscrições</li>
-                    <li><i class="fas fa-check-circle"></i> Bônus exclusivos para primeiras vagas</li>
-                    <li><i class="fas fa-check-circle"></i> Aulas pré-lançamento</li>
-                    <li><i class="fas fa-check-circle"></i> Condições especiais de pagamento</li>
-                </ul>
-                <a href="https://chat.whatsapp.com/L98TdFvyG6rKrZ1qzhSCwI?mode=wwt" class="btn btn-accent">ENTRAR NA LISTA VIP</a>
+        <div class="guarantee">
+            <div class="guarantee-content">
+                <div class="guarantee-icon">🛡️</div>
+                <h3>GARANTIA DE 15 DIAS</h3>
+                <p>Se você aplicar o Programa durante 15 Dias e não gostar dos Resultados, é só avisar e nós devolvemos o Valor e ainda ficamos amigos!</p>
+                <p><strong>Sem perguntas, sem burocracia - Risco Zero para você!</strong></p>
             </div>
         </div>
     </div>
-</section>
+
+    <!-- Bonus Section -->
+    <section class="bonus" id="bonus">
+        <div class="container">
+            <h2 class="section-title">O QUE VOCÊ VAI RECEBER</h2>
+            
+            <div class="bonus-grid">
+                <!-- Produto Principal -->
+                <div class="bonus-card">
+                    <h3 style="margin-bottom: 20px; color: var(--gold);">🎯 PRODUTO PRINCIPAL</h3>
+                    <ul class="week-features" style="text-align: left;">
+                        <li><strong>Treino Completo:</strong> Protocolo de exercícios específicos para barriga</li>
+                        <li><strong>Acesso à Plataforma:</strong> Área de membros exclusiva com todos os treinos</li>
+                        <li><strong>Cardápio Inteligente:</strong> Plano alimentar personalizado</li>
+                        <li><strong>Programa Q.6Em4:</strong> Sistema completo de queima de gordura</li>
+                    </ul>
+                </div>
+
+                <!-- Bônus 1 -->
+                <div class="bonus-card">
+                    <div class="bonus-image">
+                        <img src="https://i.postimg.cc/N0k3nJ6Q/IMG-20251010-WA0025.jpg" alt="Guia 28 Dias Queima Acelerada">
+                    </div>
+                    <div class="bonus-content">
+                        <h3 style="margin-bottom: 15px;">BÔNUS #1: GUIA 28 DIAS Q.6Em4</h3>
+                        <p>Passo a passo para alcançar o corpo saudável, sem passar fome e nem prejudicar seus resultados.</p>
+                    </div>
+                </div>
+
+                <!-- Bônus 2 -->
+                <div class="bonus-card">
+                    <div class="bonus-image">
+                        <img src="https://i.postimg.cc/j5VD8j4v/IMG-20251010-WA0024-removebg-preview.png" alt="Super Detox">
+                    </div>
+                    <div class="bonus-content">
+                        <h3 style="margin-bottom: 15px;">BÔNUS #2: SUPER DETOX Q.6Em4</h3>
+                        <p>DETOX FULL 2 DIAS - Você pode começar a consumir alimentos saudáveis. Mas se sua barriga e vias digestivas estiverem intoxicadas, não vai conseguir barriga bonita.</p>
+                    </div>
+                </div>
+
+                <!-- Bônus 3 -->
+                <div class="bonus-card">
+                    <div class="bonus-image">
+                        <img src="https://i.postimg.cc/tC79xjhD/IMG-20251010-WA0011.jpg" alt="Códigos de Alimentação">
+                    </div>
+                    <div class="bonus-content">
+                        <h3 style="margin-bottom: 15px;">BÔNUS #3: CÓDIGOS DE ALIMENTAÇÃO</h3>
+                        <p>Sem esses CÓDIGOS, Você pode até Emagrecer, mas seu emagrecer não só vai PARAR, como também vai VOLTAR A ENGORDAR.</p>
+                    </div>
+                </div>
+
+                <!-- Bônus 4 -->
+                <div class="bonus-card">
+                    <h3 style="margin-bottom: 15px;">BÔNUS #4: CHÁS TERMOGÊNICOS</h3>
+                    <p>Protocolo completo de chás naturais que aceleram o metabolismo e potencializam a queima de gordura.</p>
+                </div>
+
+                <!-- Bônus 5 -->
+                <div class="bonus-card">
+                    <h3 style="margin-bottom: 15px;">BÔNUS #5: 15 ALIMENTOS ANTI-ENVELHECIMENTO</h3>
+                    <p>Lista dos alimentos que combatem o envelhecimento precoce e rejuvenecem suas células.</p>
+                </div>
+
+                <!-- Bônus 6 -->
+                <div class="bonus-card">
+                    <h3 style="margin-bottom: 15px;">BÔNUS #6: ACOMPANHAMENTO PROFISSIONAL</h3>
+                    <p>Suporte direto com Hermenegildo Mucanze para tirar dúvidas e ajustar seu plano conforme seus resultados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Closing Section -->
     <section class="closing">
         <div class="container">

@@ -251,7 +251,7 @@
             animation: pulse 2s infinite;
         }
 
-        /* Countdown Timer */
+        /* Countdown Timer with Flip Animation */
         .countdown-container {
             background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
             color: white;
@@ -281,22 +281,59 @@
             border-radius: 10px;
             min-width: 80px;
             backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
         }
 
         .countdown-number {
             font-size: 2rem;
             font-weight: 700;
             display: block;
+            position: relative;
+            height: 45px;
+            line-height: 45px;
+            perspective: 200px;
+        }
+
+        .countdown-digit {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            transform-style: preserve-3d;
+        }
+
+        .countdown-digit.flip {
+            animation: flip 0.5s ease-in-out;
         }
 
         .countdown-label {
             font-size: 0.9rem;
             opacity: 0.9;
+            margin-top: 5px;
         }
 
         .countdown-message {
             font-size: 1.1rem;
             font-weight: 500;
+        }
+
+        @keyframes flip {
+            0% {
+                transform: rotateX(0deg);
+            }
+            50% {
+                transform: rotateX(90deg);
+            }
+            100% {
+                transform: rotateX(0deg);
+            }
         }
 
         /* Testimonials Section */
@@ -999,6 +1036,10 @@
                 flex-wrap: wrap;
             }
 
+            .countdown-item {
+                min-width: 70px;
+            }
+
             .video-container iframe,
             .video-container video {
                 height: 250px;
@@ -1053,6 +1094,8 @@
 
             .countdown-number {
                 font-size: 1.5rem;
+                height: 35px;
+                line-height: 35px;
             }
 
             .video-container iframe,
@@ -1112,19 +1155,31 @@
             <div class="countdown-title">⏰ INSCRIÇÕES ENCERRAM EM:</div>
             <div class="countdown" id="countdown">
                 <div class="countdown-item">
-                    <span class="countdown-number" id="days">00</span>
+                    <div class="countdown-number">
+                        <div class="countdown-digit" id="days-tens">0</div>
+                        <div class="countdown-digit" id="days-ones">0</div>
+                    </div>
                     <span class="countdown-label">Dias</span>
                 </div>
                 <div class="countdown-item">
-                    <span class="countdown-number" id="hours">00</span>
+                    <div class="countdown-number">
+                        <div class="countdown-digit" id="hours-tens">0</div>
+                        <div class="countdown-digit" id="hours-ones">0</div>
+                    </div>
                     <span class="countdown-label">Horas</span>
                 </div>
                 <div class="countdown-item">
-                    <span class="countdown-number" id="minutes">00</span>
+                    <div class="countdown-number">
+                        <div class="countdown-digit" id="minutes-tens">0</div>
+                        <div class="countdown-digit" id="minutes-ones">0</div>
+                    </div>
                     <span class="countdown-label">Minutos</span>
                 </div>
                 <div class="countdown-item">
-                    <span class="countdown-number" id="seconds">00</span>
+                    <div class="countdown-number">
+                        <div class="countdown-digit" id="seconds-tens">0</div>
+                        <div class="countdown-digit" id="seconds-ones">0</div>
+                    </div>
                     <span class="countdown-label">Segundos</span>
                 </div>
             </div>
@@ -1399,7 +1454,14 @@
             });
         });
 
-        // Countdown Timer
+        // Countdown Timer with Flip Animation
+        let previousTime = {
+            days: 0,
+            hours: 0,
+            minutes: 0,
+            seconds: 0
+        };
+
         function updateCountdown() {
             const countdownDate = new Date('November 2, 2024 23:59:59').getTime();
             const now = new Date().getTime();
@@ -1415,13 +1477,51 @@
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            document.getElementById('days').innerText = days.toString().padStart(2, '0');
-            document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
-            document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
-            document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
+            // Update digits with animation if they change
+            updateDigit('days', days, previousTime.days);
+            updateDigit('hours', hours, previousTime.hours);
+            updateDigit('minutes', minutes, previousTime.minutes);
+            updateDigit('seconds', seconds, previousTime.seconds);
+
+            previousTime = { days, hours, minutes, seconds };
+        }
+
+        function updateDigit(type, currentValue, previousValue) {
+            if (currentValue !== previousValue) {
+                const tens = Math.floor(currentValue / 10);
+                const ones = currentValue % 10;
+                
+                const prevTens = Math.floor(previousValue / 10);
+                const prevOnes = previousValue % 10;
+
+                // Update tens digit with animation
+                if (tens !== prevTens) {
+                    const tensElement = document.getElementById(`${type}-tens`);
+                    tensElement.textContent = tens;
+                    tensElement.classList.add('flip');
+                    setTimeout(() => tensElement.classList.remove('flip'), 500);
+                }
+
+                // Update ones digit with animation
+                if (ones !== prevOnes) {
+                    const onesElement = document.getElementById(`${type}-ones`);
+                    onesElement.textContent = ones;
+                    onesElement.classList.add('flip');
+                    setTimeout(() => onesElement.classList.remove('flip'), 500);
+                }
+            }
+        }
+
+        // Initialize digits
+        function initializeDigits() {
+            const digits = ['days-tens', 'days-ones', 'hours-tens', 'hours-ones', 'minutes-tens', 'minutes-ones', 'seconds-tens', 'seconds-ones'];
+            digits.forEach(digit => {
+                document.getElementById(digit).textContent = '0';
+            });
         }
 
         // Update countdown every second
+        initializeDigits();
         setInterval(updateCountdown, 1000);
         updateCountdown(); // Initial call
     </script>
